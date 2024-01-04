@@ -1,7 +1,3 @@
-
-
-
-
 class Card:
     
     def __init__(self, rank = "JOKER", suit = "JOKER"):
@@ -25,3 +21,8 @@ class Card:
             'KING' : 10
         }
         return value_dic.get(self.rank)
+    
+if __name__ == "__main__":
+    
+    # Keep This for now to know the code runs to completion
+    print('This is the Last line')

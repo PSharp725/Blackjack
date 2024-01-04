@@ -1,7 +1,3 @@
-
-
-
-
 class Player:
     
     def __init__(self, player_type = "unassingned"):
@@ -12,3 +8,9 @@ class Player:
     
     def get_hand(self):
         return self.hand
+    
+    
+if __name__ == "__main__":
+    
+    # Keep This for now to know the code runs to completion
+    print('This is the Last line')   

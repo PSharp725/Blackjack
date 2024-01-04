@@ -1,10 +1,13 @@
-
-
 import random
-from Blackjack.Classes import Card
+import os
+import sys
 
+# Add the project's root directory to sys.path
+current_dir = os.path.dirname(os.path.abspath(__file__))
+project_root = os.path.abspath(os.path.join(current_dir, ".."))
+sys.path.insert(0, project_root)
 
-
+from classes import card
 
 class Deck:
     
@@ -35,7 +38,7 @@ class Deck:
         self.deck = []
         for suit in Suits:
             for rank in Ranks:
-                self.deck.append(Card(rank, suit))
+                self.deck.append(card.Card(rank, suit))
     
     def shuffle_deck(self):
         random.shuffle(self.deck)
@@ -51,3 +54,16 @@ class Deck:
         self.deck.pop()
         self.card_count -= 1
         return pulled_card
+    
+    # outputs a new deck with the old deck appended. Needed for when you have less cards in the deck than need for a function (deal_hand)
+    def new_deck(self):
+        new_deck = Deck()
+        new_deck.shuffle_deck()
+        self.deck =  new_deck + self.deck
+        
+if __name__ == "__main__":
+    
+    # Keep This for now to know the code runs to completion
+    new_card = card.Card()
+    print(new_card.rank)
+    print('This is the Last line')
