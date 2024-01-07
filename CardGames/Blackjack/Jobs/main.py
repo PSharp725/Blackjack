@@ -32,5 +32,6 @@ if __name__ == "__main__":
     test_deck = deck.Deck()
     test_player = player.Player()
     test_game = blackjack.Blackjack()
+    test_game.play_game()
     #print(sys.path)
     print('This is the Last line of ' + __file__)
