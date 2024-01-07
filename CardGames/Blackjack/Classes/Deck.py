@@ -12,8 +12,11 @@ from classes import card
 class Deck:
     
     def __init__(self):
-        self.card_count = 52
-        
+        self.card_count = 0
+        self.deck = []
+        Deck.build_deck(self)
+    
+    def build_deck(self):
         Ranks = [
             'ACE',
             'TWO',
@@ -35,10 +38,8 @@ class Deck:
             'DIAMONDS',
             'CLUBS']
         
-        self.deck = []
-        for suit in Suits:
-            for rank in Ranks:
-                self.deck.append(card.Card(rank, suit))
+        self.deck = [card.Card(rank, suit) for suit in Suits for rank in Ranks]
+        self.card_count = 52
     
     def shuffle_deck(self):
         random.shuffle(self.deck)
@@ -55,7 +56,6 @@ class Deck:
         self.card_count -= 1
         return pulled_card
     
-    # outputs a new deck with the old deck appended. Needed for when you have less cards in the deck than need for a function (deal_hand)
     def new_deck(self):
         new_deck = Deck()
         new_deck.shuffle_deck()
@@ -64,6 +64,4 @@ class Deck:
 if __name__ == "__main__":
     
     # Keep This for now to know the code runs to completion
-    new_card = card.Card()
-    print(new_card.rank)
-    print('This is the Last line')
+    print('This is the Last line of ' + __file__)

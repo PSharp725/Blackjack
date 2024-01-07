@@ -13,4 +13,4 @@ class Player:
 if __name__ == "__main__":
     
     # Keep This for now to know the code runs to completion
-    print('This is the Last line')   
+    print('This is the Last line of ' + __file__)

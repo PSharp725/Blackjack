@@ -1,10 +1,10 @@
 class Card:
     
-    def __init__(self, rank = "JOKER", suit = "JOKER"):
+    def __init__(self, rank: str = "JOKER", suit: str = "JOKER"):
         self.rank = rank
         self.suit = suit
     
-    def get_rank_value(self):
+    def get_rank_value(self) -> int:
         value_dic = {
             'ACE' : 11,
             'TWO' : 2,
@@ -25,4 +25,4 @@ class Card:
 if __name__ == "__main__":
     
     # Keep This for now to know the code runs to completion
-    print('This is the Last line')
+    print('This is the Last line of ' + __file__)
